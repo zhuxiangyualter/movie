@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mapper.SeatMapper">
+    <update id="update" parameterType="com.example.entity.Seat">
+        update seat
+        <set>
+            <if test="seatColumn != null">seat_column = #{seatColumn},</if>
+        </set>
+        WHERE movie_id = #{movieId}
+        AND play_date = #{playDate}
+        AND seat_row = #{seatRow}
+    </update>
+</mapper>
